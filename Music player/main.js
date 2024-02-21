@@ -12,11 +12,20 @@ const playBtn = document.querySelector('.play-btn');
 const forwardBtn = document.querySelector('.forward-btn');
 const backwardBtn = document.querySelector('.backward-btn');
 
+let isPlaying = false;
 playBtn.addEventListener('click', () => {
-    if (playBtn.className.includes('.pause')) {
-        music.play();
+    // if (playBtn.className.includes('.pause')) {
+    //     music.play();
+    // } else {
+    //     music.pause();
+    // }
+  //
+    if (!isPlaying) {
+      music.play();
+      isPlaying = true;
     } else {
-        music.pause();
+      music.pause();
+      isPlaying = false;
     }
 
     playBtn.classList.toggle('pause');
